@@ -3,10 +3,20 @@ package com.sabinabernardes.crm.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.br.CPF;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 
 @Entity
@@ -15,39 +25,39 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	public Integer id ;
 	
-	//@Column(nullable = false)
-	//@NotEmpty(message = "{campo.clienteNome.obrigatorio}")
-	//@Length(max = 100,message="{campo.clienteNome.caracteres}")
-	//@NotNull(message="{campo.name.nulo}")
-	public String name;
+	@Column(nullable = false)
+	@NotEmpty(message = "{campo.nome.obrigatorio}")
+	@Length(max = 100,message="{campo.nome.caracteres}")
+	@NotNull(message="{campo.nome.nulo}")
+	public String nome;
 	
-	//@Email(message ="{campo.clienteEmail.invalido}")
-	//@NotNull(message="{campo.clienteEmail.nulo}")
-	//@Length(max = 100,message="{campo.clienteEmail.caracteres}")
-	//@NotEmpty(message = "{campo.clienteEmail.obrigatorio}")	
-	//@Column(nullable = false,unique = true)
+	@Email(message ="{campo.email.invalido}")
+	@NotNull(message="{campo.email.nulo}")
+	@Length(max = 100,message="{campo.email.caracteres}")
+	@NotEmpty(message = "{campo.email.obrigatorio}")	
+	@Column(nullable = false,unique = true)
 	public String email;
 	
-	//@CPF(message = "{campo.clienteCpf.invalido}")
-	//@NotNull(message="{campo.clienteCpf.nulo}")
-	//@NotEmpty(message = "{campo.clienteCpf.obrigatorio}")
-	//@Column(nullable = false,unique=true)
+	@CPF(message = "{campo.cpf.invalido}")
+	@NotNull(message="{campo.cpf.nulo}")
+	@NotEmpty(message = "{campo.cpf.obrigatorio}")
+	@Column(nullable = false,unique=true)
 	public String cpf;
 	
 	
-	//@JsonFormat(pattern = "dd/MM/yyyy")	
-	//@NotNull(message="{campo.clienteNascimento.nulo}")
-	//@Column(nullable = false)
+	@JsonFormat(pattern = "dd/MM/yyyy")	
+	@NotNull(message="{campo.dataNasc.nulo}")
+	@Column(nullable = false)
 	public Date dataNasc;
 	
 	public Cliente () {
 		
 	}
 
-	public Cliente(Integer id, String name, String email, String cpf, Date dataNasc) {
+	public Cliente(Integer id, String nome, String email, String cpf, Date dataNasc) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.nome = nome;
 		this.email = email;
 		this.cpf = cpf;
 		this.dataNasc = dataNasc;
@@ -62,11 +72,11 @@ public class Cliente {
 	}
 
 	public String getName() {
-		return name;
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String nome) {
+		this.nome = nome;
 	}
 
 	public String getEmail() {
@@ -120,7 +130,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", name=" + name + ", email=" + email + ", cpf=" + cpf + ", dataNasc=" + dataNasc
+		return "Cliente [id=" + id + ", name=" + nome + ", email=" + email + ", cpf=" + cpf + ", dataNasc=" + dataNasc
 				+ "]";
 	}
 
