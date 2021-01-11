@@ -30,6 +30,7 @@
 
 ### As dependências foram adicionadas no arquivo pom.xml conforme mostradas abaixo 
 
+```
 <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -68,7 +69,7 @@
 
 	</dependencies>
 	
-	
+```	
 
 
  https://github.com/sabinabernardes/cadastro_cliente/blob/main/pom.xml
@@ -81,7 +82,7 @@
 
 #### Classe reponsavel pela parte dos dados do projeto 
 
-#### Para o cadastro de clientes usaremos  as seguintes variaveis  
+### Para o cadastro de clientes usaremos  as seguintes variaveis  
 
 ##### public Integer id ; 
 ##### public String nome;
@@ -108,7 +109,7 @@
 
 #### O Código abaixo mostra a classe model completa 
 
-''' 
+```
 
 package com.sabinabernardes.crm.model;
 
@@ -231,7 +232,7 @@ public class Cliente {
 
 }
 
-
+```
 https://github.com/sabinabernardes/cadastro_cliente/blob/803f65e6cae1fea3786cb4d08f1b5209bf125ca6/src/main/java/com/sabinabernardes/crm/model/Cliente.java
 
 
