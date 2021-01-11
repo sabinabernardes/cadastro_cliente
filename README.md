@@ -288,7 +288,7 @@ public class ClienteController {
 ## Classe Cliente Repository
 
 ##### Responsável por isolar os objetos ou entidades do domínio do código que acessa o banco de dados
-##### Criar Interface
+##### Criar  em forma de interface
 
 
 ```
@@ -382,9 +382,9 @@ public class ApplicationControllerAdvice {
 
 ### Anotações utilizadas para cada variavel
 
-##### @NotEmpty(message = "{campo.nome.obrigatorio}")
-##### @Length(max = 100,message="{campo.nome.caracteres}")
-##### @NotNull(message="{campo.nome.nulo}")
+##### @NotEmpty(message = "{campo.nome.obrigatorio}")(O campo não pode estar vazio )
+##### @Length(max = 100,message="{campo.nome.caracteres}")(Tamanho máximo de caracteres)
+##### @NotNull(message="{campo.nome.nulo}") (O campo nao pode estar nulo )
 
 #### Código atualizado da Classe Cliente
 
@@ -532,26 +532,47 @@ public class Cliente {
 
 ## Criar arquivo com as mensagem de erros 
 
+##### Arquivo gerado na pasta scr/main/resouces. Contendo as mensagens referentes aos possiveis erros . 
+
 ###### campo.nome.obrigatorio=O campo nome é obrigatório!
 ###### campo.nome.caracteres=O campo nome passou de 100 caracteres
 ###### campo.nome.nulo=O campo nome esta nulo!
-###### campo.cpf.obrigatorio=O campo CPF é obrigatório!
-###### campo.cpf.invalido=O CPF inválido!
-###### campo.cpf.nulo=O CPF está nulo!
-###### campo.cpf.unico=O CPF já existente!
 ###### campo.email.obrigatorio= O email é obrigatório!
 ###### campo.email.invalido= O email esta inválido!
 ###### campo.email.nulo=O Email está  nulo!
 ###### campo.email.caracteres=O email passou de 255 caracteres!
 ###### campo.email.unico=O email já existe!
+###### campo.cpf.obrigatorio=O campo CPF é obrigatório!
+###### campo.cpf.invalido=O CPF inválido!
+###### campo.cpf.nulo=O CPF está nulo!
+###### campo.cpf.unico=O CPF já existente!
 ###### campo.dataNasc.obrigatorio= A data de nascimento é obrigatório!
 ###### campo.dataNasc.nulo= A data de nascimento está nula!
 
 ## Gerador de CPF válido para teste 
 
+##### Para o teste de dados do Json utilizamos o site a seguir 
+
 ## Teste de Duplicidade CPF
 
+##### Neste teste cadastramos 2 vezes o mesmo cpf e podemos observar a resposta do sistema 
+
 ## Teste de Duplicidade e-mail 
+
+##### Neste teste cadastramos 2 vezes o mesmo cpf e podemos observar a resposta do sistema 
+
+## Conclusão 
+
+Espero que com este tutorial seja possivel
+
+
+https://github.com/sabinabernardes/cadastro_cliente/blob/main/README.md
+
+https://www.linkedin.com/in/sabina-r-023867b0/
+
+
+
+
 
 
 
