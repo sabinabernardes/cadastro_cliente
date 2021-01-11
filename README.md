@@ -12,6 +12,8 @@
 
 #### File>New> Spring Starter Project
 
+![iniciando o projeto](https://github.com/sabinabernardes/cadastro_cliente/commit/21efc9610e09fd18b9b42a1a551091a62544c70c#diff-06f290ca62e4784f66c38bc037d790d4e4fbcb160ea8bc2dfe89ee9c13f6aadd)
+
 ## Adicionar as seguintes dependências 
 
 #### •	Spring Boot DevTools (Ajuda na configuração automática)
