@@ -1,4 +1,4 @@
-# REST API usando Spring Boot, Hibernate, JPA e H2 Data Base 
+# REST API usando Spring Boot, Hibernate, JPA e H2 Database 
 
 ### Este artigo tem como objetivo montar uma REST API usando Spring Boot, Hibernate, JPA e H2 Data Base. Para simular o cadastro de clientes.
 
@@ -25,7 +25,7 @@
 1.	Spring Boot DevTools (Ajuda na configuração automática)
 2.	Spring Data Jpa (Java persistence API)
 3.	Spring Web (Spring padrão MVC)
-4.	H2 Data Base (Banco de dados em memória)
+4.	H2 Database (Banco de dados em memória)
 
 
 ### As dependências foram adicionadas no arquivo pom.xml conforme mostradas abaixo 
@@ -91,11 +91,11 @@
 ##### public Date dataNasc;
 
 ### Apos adicionar as variaveis usar as anotações abaixo 
-##### @Entity 
-##### @Id
-##### @GeneratedValue(strategy = GenerationType.IDENTITY)
-##### @Column(nullable = false)	
-##### @JsonFormat(pattern = "dd/MM/yyyy")
+##### @Entity (informa que uma classe também é uma entidade)
+##### @Id (campo/atributo relacionado à chave primária)
+##### @GeneratedValue(strategy = GenerationType.IDENTITY) (identificador único da entidade será gerenciada pelo provedor de persistência, usada abaixo do @id)
+##### @Column(nullable = false)	(Mantem o nome da variavel como o da coluna no banco de dados)
+##### @JsonFormat(pattern = "dd/MM/yyyy") (Formata o Json ex: 01/01/1998)
 
 #### Botão Direito > Source adicionar os itens abaixo
 
@@ -235,12 +235,13 @@ https://github.com/sabinabernardes/cadastro_cliente/blob/803f65e6cae1fea3786cb4d
 ##### Responsável por gerenciar as requisições 
 
 #### Anotações utilizadas nesta classe 
-@RestController
-@RequestMapping("/clientes")
-@Autowired
-@GetMapping
-@PostMapping
-@ResponseStatus(HttpStatus.CREATED)
+
+##### @RestController (retorna o objeto e os dados do objeto para gravar  diretamente na resposta HTTP como JSON ou XML.)
+##### @RequestMapping("/clientes")
+##### @Autowired
+##### @GetMapping
+##### @PostMapping
+##### @ResponseStatus(HttpStatus.CREATED)
 
 
 
@@ -286,6 +287,8 @@ public class ClienteController {
 
 ## Classe Cliente Repository
 
+##### Responsável por isolar os objetos ou entidades do domínio do código que acessa o banco de dadoss
+
 
 ```
 package com.sabinabernardes.crm.repository;
@@ -305,9 +308,15 @@ public interface ClienteRepository  extends JpaRepository<Cliente,Integer>{
 
 ### Comando Put
 
+##### Utilizando o Postman podemos fazer o teste de cadastro do primeiro cliente no Json.
+A partir da porta 8080 e o path /clientes 
+Conforme mostrado abaixo após o cadastro a resposta do sistema foi 201 indicando que o cadastro foi realizado .
+
 ![](https://github.com/sabinabernardes/cadastro_cliente/blob/main/postman_put.PNG)
 
 ### Comando Get
+
+##### Com o comando Get podemos receber os dados do Json com as informações do cliente
 
 ![](https://github.com/sabinabernardes/cadastro_cliente/blob/main/postman_get.PNG)
 
