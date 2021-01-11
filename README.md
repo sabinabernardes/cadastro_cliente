@@ -117,6 +117,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Cliente {
@@ -300,7 +301,15 @@ public interface ClienteRepository  extends JpaRepository<Cliente,Integer>{
 
 }
 ```
+## Teste de cadastro utilizando o Postman 
 
+### Comando Put
+
+![](https://github.com/sabinabernardes/cadastro_cliente/blob/main/postman_put.PNG)
+
+### Comando Get
+
+![](https://github.com/sabinabernardes/cadastro_cliente/blob/main/postman_get.PNG)
 
 
 
