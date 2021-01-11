@@ -229,6 +229,82 @@ public class Cliente {
 ```
 https://github.com/sabinabernardes/cadastro_cliente/blob/803f65e6cae1fea3786cb4d08f1b5209bf125ca6/src/main/java/com/sabinabernardes/crm/model/Cliente.java
 
+## Classe Controller
+
+##### Responsável por gerenciar as requisições 
+
+#### Anotações utilizadas nesta classe 
+@RestController
+@RequestMapping("/clientes")
+@Autowired
+@GetMapping
+@PostMapping
+@ResponseStatus(HttpStatus.CREATED)
+
+
+
+```
+package com.sabinabernardes.crm.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sabinabernardes.crm.model.Cliente;
+import com.sabinabernardes.crm.repository.ClienteRepository;
+
+@RestController
+@RequestMapping("/clientes")
+
+
+public class ClienteController {
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@GetMapping
+	public List<Cliente> listar() {
+		
+		return clienteRepository.findAll();
+	}
+	
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public Cliente adicionar(@RequestBody Cliente cliente) {
+	return clienteRepository.save(cliente);	
+	}
+	}
+```
+
+## Classe Cliente Repository
+
+
+```
+package com.sabinabernardes.crm.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.sabinabernardes.crm.model.Cliente;
+
+@Repository
+public interface ClienteRepository  extends JpaRepository<Cliente,Integer>{
+	
+
+}
+```
+
+
+
+
+
 
 
  
