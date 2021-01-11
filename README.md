@@ -20,7 +20,8 @@
 ### •	H2 Data Base (Banco de dados em memória)
 ### As dependências foram adicionadas no arquivo pom.xml
 
-''' <dependencies>
+''' xml
+<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
