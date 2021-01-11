@@ -20,8 +20,8 @@
 #### •	H2 Data Base (Banco de dados em memória)
 
 
-### As dependências foram adicionadas no arquivo pom.xml
-''' xml
+### As dependências foram adicionadas no arquivo pom.xml conforme mostradas abaixo 
+
 <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -59,6 +59,8 @@
 		</dependency>
 
 	</dependencies>
+	
+	
 
 
  https://github.com/sabinabernardes/cadastro_cliente/blob/main/pom.xml
@@ -69,7 +71,38 @@
 
 ## Classe Cliente Model
 
-'''package com.sabinabernardes.crm.model;
+### Classe reponsavel pela parte dos dados do projeto 
+
+#### Para o cadastro de clientes usaremos  as seguintes variaveis  
+
+##### public Integer id ; 
+##### public String nome;
+##### public String email;
+##### public String cpf;
+##### public Date dataNasc;
+
+### Apos adicionar as variaveis criar as estidades abaixo 
+### Botão Direito > Source adicionar os itens abaixo
+
+#### •	Generated Construtor using  Fields   (Selecionar todos os campos)
+#### •	Generated Getters and Setters	     (Selecionar todos os campos)
+#### •	Generated hashCode() and equals()    (id)
+#### •	Generated toString()...              (Selecionar todos os campos)
+
+### Utilizar tambem essas anotações 
+
+##### @Entity 
+##### @Id
+##### @GeneratedValue(strategy = GenerationType.IDENTITY)
+##### @Column(nullable = false)	
+##### @NotEmpty(message = "{campo.nome.obrigatorio}")
+##### @Length(max = 100,message="{campo.nome.caracteres}")
+##### @NotNull(message="{campo.nome.nulo}")
+##### @JsonFormat(pattern = "dd/MM/yyyy")
+
+### O Código abaixo mostra a classe model completa 
+
+''' package com.sabinabernardes.crm.model;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -206,14 +239,8 @@ public class Cliente {
 }
 
 
+https://github.com/sabinabernardes/cadastro_cliente/blob/803f65e6cae1fea3786cb4d08f1b5209bf125ca6/src/main/java/com/sabinabernardes/crm/model/Cliente.java
 
-
-### Botão Direito > Source adicionar os itens abaixo
-
-#### •	Generated Construtor using  Fields   (Selecionar todos os campos)
-#### •	Generated Getters and Setters	     (Selecionar todos os campos)
-#### •	Generated hashCode() and equals()    (id)
-#### •	Generated toString()...              (Selecionar todos os campos)
 
 
  
