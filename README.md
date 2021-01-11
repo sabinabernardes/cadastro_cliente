@@ -3,26 +3,29 @@
 ### Este artigo tem como objetivo montar uma REST API usando Spring Boot, Hibernate, JPA e H2 Data Base. Para simular o cadastro de clientes.
 
 ## Antes de começar precisaremos dos seguintes itens instalados:
-1 •	Java JDK(v11)
-2 •	Maven 
-3 •	Spring Tools 4 (IDE baseada no Eclipse)
-4 •	Postman 
-
-
-
+1. 	Java JDK(v11)
+2. 	Maven 
+3. 	Spring Tools 4 (IDE baseada no Eclipse)
+4. 	Postman 
 
 ## Criando a aplicação
 
-#### File>New> (<Spring Starter Project>)
+#### File>New>Spring Starter Project
+#### Preencher os campos abaixo
+1.Name
+2.Group
+3.Artifact
+4.Package
 
-![iniciando o projeto](https://github.com/sabinabernardes/cadastro_cliente/commit/21efc9610e09fd18b9b42a1a551091a62544c70c#diff-06f290ca62e4784f66c38bc037d790d4e4fbcb160ea8bc2dfe89ee9c13f6aadd)
+![iniciando o projeto](https://github.com/sabinabernardes/cadastro_cliente/blob/main/Spring%20starter.PNG)
 
-## Adicionar as seguintes dependências 
 
- •	Spring Boot DevTools (Ajuda na configuração automática)
- •	Spring Data Jpa (Java persistence API)
- •	Spring Web (Spring padrão MVC)
- •	H2 Data Base (Banco de dados em memória)
+#### Adicionar as seguintes dependências 
+
+1.	Spring Boot DevTools (Ajuda na configuração automática)
+2.	Spring Data Jpa (Java persistence API)
+3.	Spring Web (Spring padrão MVC)
+4.	H2 Data Base (Banco de dados em memória)
 
 
 ### As dependências foram adicionadas no arquivo pom.xml conforme mostradas abaixo 
