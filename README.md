@@ -10,7 +10,7 @@
 
 ## Criando a aplicação
 
-#### New> Spring Starter Project
+#### File>New> Spring Starter Project
 
 ## Adicionar as seguintes dependências 
 
