@@ -79,7 +79,7 @@
 
 ## Classe Cliente Model
 
-### Classe reponsavel pela parte dos dados do projeto 
+#### Classe reponsavel pela parte dos dados do projeto 
 
 #### Para o cadastro de clientes usaremos  as seguintes variaveis  
 
@@ -89,16 +89,7 @@
 ##### public String cpf;
 ##### public Date dataNasc;
 
-### Apos adicionar as variaveis criar as estidades abaixo 
-### Botão Direito > Source adicionar os itens abaixo
-
-#### •	Generated Construtor using  Fields   (Selecionar todos os campos)
-#### •	Generated Getters and Setters	     (Selecionar todos os campos)
-#### •	Generated hashCode() and equals()    (id)
-#### •	Generated toString()...              (Selecionar todos os campos)
-
-### Utilizar tambem essas anotações 
-
+### Apos adicionar as variaveis usar as anotações abaixo 
 ##### @Entity 
 ##### @Id
 ##### @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -108,24 +99,18 @@
 ##### @NotNull(message="{campo.nome.nulo}")
 ##### @JsonFormat(pattern = "dd/MM/yyyy")
 
-### O Código abaixo mostra a classe model completa 
+#### Botão Direito > Source adicionar os itens abaixo
 
-''' package com.sabinabernardes.crm.model;
-import java.util.Date;
+1. •	Generated Construtor using  Fields   (Selecionar todos os campos)
+2. •	Generated Getters and Setters	     (Selecionar todos os campos)
+3. •	Generated hashCode() and equals()    (id)
+4. •	Generated toString()...              (Selecionar todos os campos)
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+#### O Código abaixo mostra a classe model completa 
 
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.br.CPF;
+''' 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+package com.sabinabernardes.crm.model;
 
 
 
