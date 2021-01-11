@@ -95,9 +95,6 @@
 ##### @Id
 ##### @GeneratedValue(strategy = GenerationType.IDENTITY)
 ##### @Column(nullable = false)	
-##### @NotEmpty(message = "{campo.nome.obrigatorio}")
-##### @Length(max = 100,message="{campo.nome.caracteres}")
-##### @NotNull(message="{campo.nome.nulo}")
 ##### @JsonFormat(pattern = "dd/MM/yyyy")
 
 #### Botão Direito > Source adicionar os itens abaixo
@@ -113,7 +110,13 @@
 
 package com.sabinabernardes.crm.model;
 
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Cliente {
@@ -122,27 +125,18 @@ public class Cliente {
 	public Integer id ;
 	
 	@Column(nullable = false)
-	@NotEmpty(message = "{campo.nome.obrigatorio}")
-	@Length(max = 100,message="{campo.nome.caracteres}")
-	@NotNull(message="{campo.nome.nulo}")
 	public String nome;
 	
-	@Email(message ="{campo.email.invalido}")
-	@NotNull(message="{campo.email.nulo}")
-	@Length(max = 100,message="{campo.email.caracteres}")
-	@NotEmpty(message = "{campo.email.obrigatorio}")	
+
 	@Column(nullable = false,unique = true)
 	public String email;
 	
-	@CPF(message = "{campo.cpf.invalido}")
-	@NotNull(message="{campo.cpf.nulo}")
-	@NotEmpty(message = "{campo.cpf.obrigatorio}")
+
 	@Column(nullable = false,unique=true)
 	public String cpf;
 	
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")	
-	@NotNull(message="{campo.dataNasc.nulo}")
 	@Column(nullable = false)
 	public Date dataNasc;
 	
